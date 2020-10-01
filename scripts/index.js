@@ -13,10 +13,12 @@ var urls = [
 // $.get(urls[4]).then(console.log("data was fetched!"));
 
 let requests = urls.map((url) => fetch(url));
+
 Promise.all(requests).then((requests) => {
   console.log(requests);
   requests.forEach((element) => {
     console.log("data was fetched!");
+    consol.log()
   });
 });
 
@@ -42,3 +44,23 @@ var promise = new Promise(function addNumbers(resolve, reject) {
     reject(Error("x & y must be numbers"));
   }
 });
+
+
+const fruits
+
+//////////
+
+import fetch from 'node-fetch';
+
+const promise = fetch('https://jsonplaceholder.typicode.com/todos/1');
+
+promise
+  .then(res => res.json())
+  .then(todo => {
+    throw new Error('uh oh');
+    return todo;
+  })
+  .then(todo => console.log('😛', todo.title))
+  .catch(err => console.error('😭', err));
+
+console.log('🥪 Synchronous');
