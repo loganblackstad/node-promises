@@ -1,5 +1,10 @@
 const tick = Date.now();
-const log = (v) => console.log(`${v} \n Elapsed: ${Date.now() - tick}ms`);
+
+const log = (msg) => console.log(`${msg} \n Elapsed: ${Date.now() - tick}ms`);
+
+function log2(msg) {
+  console.log(`${msg} \n Elapsed: ${Date.now() - tick}ms`);
+}
 
 const codeBlocker = () => {
 
@@ -13,22 +18,22 @@ const codeBlocker = () => {
 
   // Async blocking
 
-  return new Promise((resolve, reject) => {
+  // return new Promise((resolve, reject) => {
 
-    let i = 0;
-    while (i < 1000000000) { i++; }
+  //   let i = 0;
+  //   while (i < 1000000000) { i++; }
 
-    resolve('🐷 billion loops done');
-  })
+  //   resolve('🐷 billion loops done');
+  // })
 
 
   // Non-blocking
 
-  // return Promise.resolve().then(v => {
-  //   let i = 0;
-  //   while (i < 1000000000) { i++; }
-  //   return '🐷 billion loops done';
-  // })
+  return Promise.resolve().then(v => {
+    let i = 0;
+    while (i < 1000000000) { i++; }
+    return '🐷 billion loops done';
+  })
 
 }
 
@@ -39,3 +44,5 @@ codeBlocker().then(log)
 
 
 log('🥪 Synchronous 2');
+
+log2('🥪 Synchronous 3');
