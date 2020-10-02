@@ -36,3 +36,6 @@ getFruit('peach').then(console.log);
 // it is very clear that async await is much easier to read
 makeSmoothie().then(console.log);
 makeSmoothie2().then(console.log);
+
+
+module.exports = { getFruit, makeSmoothie, makeSmoothie2 };

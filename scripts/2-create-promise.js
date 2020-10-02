@@ -39,9 +39,11 @@ const codeBlocker = () => {
 
 log('🥪 Synchronous 1');
 
-// codeBlocker().then(log)
-log(codeBlocker());
+codeBlocker().then(log)
+// log(codeBlocker());
 
 log('🥪 Synchronous 2');
 
 log('🥪 Synchronous 3');
+
+module.exports = { log }
