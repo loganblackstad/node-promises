@@ -1,4 +1,7 @@
-import { getFruit } from './3-async-await';
+// import { getFruit } from './3-async-await';
+
+const { getFruit } = require('./3-async-await.js')
+
 
 const fruits = ['peach', 'pineapple', 'strawberry'];
 
@@ -15,7 +18,7 @@ const fruitInspection = async () => {
   }
 };
 
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
 
 const getTodo = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
